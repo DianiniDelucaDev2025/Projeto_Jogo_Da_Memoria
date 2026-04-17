@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🎮 Jogo da Memória</h1>
+
+  <div id="menu">
+    <label>Digite seu nome: <input type="text" id="playerName" placeholder="Seu nome"></label>
+    <label>Nível de dificuldade:
+      <select id="difficulty">
+        <option value="facil">Fácil (20 cartas)</option>
+        <option value="medio">Médio (30 cartas)</option>
+        <option value="dificil">Difícil (40 cartas)</option>
+      </select>
+    </label>
+    <button id="startGame">Começar</button>
+  </div>
+
+  <div id="game" style="display:none;">
+    <div class="info-row">
+      <p>Jogador: <strong><span id="showName"></span></strong></p>
+      <p>Fase: <strong><span id="phase">1</span></strong>/30</p>
+      <p>Jogadas: <strong><span id="moves">0</span></strong></p>
+      <p>Tempo: <strong><span id="timer">0</span></strong> s</p>
+    </div>
+
+    <div class="controls">
+      <label>Mudar nível:
+        <select id="changeDifficulty">
+          <option value="facil">Fácil</option>
+          <option value="medio">Médio</option>
+          <option value="dificil">Difícil</option>
+        </select>
+        <button id="applyDifficulty">Aplicar</button>
+      </label>
+      <button id="restart">Reiniciar fase</button>
+      <button id="backToMenu">Voltar ao menu</button>
+    </div>
+
+    <div id="game-board" aria-live="polite"></div>
+  </div>
+
+  <div id="ranking" style="display:none;">
+    <h2>🏆 Ranking (Top 10)</h2>
+    <ol id="rankingList"></ol>
+    <div class="ranking-controls">
+      <button id="clearRanking">Limpar ranking</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
